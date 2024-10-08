@@ -14,15 +14,22 @@ class LibraryTest {
 
         //when
         library.addBook(new Book("Harry Potter", "JK Rowling", 1994, "3545"));
-        library.addBook(new Book("", "", 1922, "3345"));
-        library.addBook(new Book("Sagan om Ringen", "Tolkien", 1992, ""));
 
         //then
         assertEquals("Harry Potter", library.getBook("3545").getTitle());
-        assertNull(library.getBook("3345"));
-        assertNull(library.getBook(""));
-        //assertThrows(IllegalArgumentException);
 
+        // Här testar vi att undantagen kastas
+        assertThrows(IllegalArgumentException.class, () -> {
+            library.addBook(new Book("", "", 1922, "3345"));
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            library.addBook(new Book("Sagan om Ringen", "Tolkien", 1992, ""));
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            library.addBook(new Book("Sagan om Ringen", "Tolkien", 2025, "3345"));
+        });
     }
 
     @Test
