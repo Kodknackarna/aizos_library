@@ -21,6 +21,7 @@ class LibraryTest {
         assertEquals("Harry Potter", library.getBook("3545").getTitle());
         assertNull(library.getBook("3345"));
         assertNull(library.getBook(""));
+        //assertThrows(IllegalArgumentException);
 
     }
 
