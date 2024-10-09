@@ -86,9 +86,10 @@ class LibraryTest {
         Library library = new Library();
 
         //when
-        library.updateBook("Harry Potter", new Book("Ny titel", "Ny författare", 1992, "Nytt ISBN"));
+        library.addBook(new Book("Harry Potter", "JK Rowling", 1994, "3345" ));
+        library.updateBook("3345", new Book("Harry Potter", "Adam", 1994, "3345"));
 
         //then
-        assertEquals("New Author", library.getBook("3545").getAuthor());
+        assertEquals("Adam", library.getBook("3345").getAuthor());
     }
 }

@@ -29,7 +29,14 @@ public class Library {
     }
 
     public void updateBook(String isbn, Book updatedBook) {
-        //update a book
+        for (Book book : books) {
+            if(book.getIsbn().equals(isbn)) {
+                book.setTitle(updatedBook.getTitle());
+                book.setAuthor(updatedBook.getAuthor());
+                book.setYear(updatedBook.getYear());
+                book.setIsbn(updatedBook.getIsbn());
+            }
+        }
     }
 
 
