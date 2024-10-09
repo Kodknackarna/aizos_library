@@ -24,10 +24,10 @@ public class Library {
     public boolean doesBookExist(String isbn) {
         for (Book book : books) {
             if(book.getIsbn().equals(isbn)) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public void updateBook(String isbn, Book updatedBook) {
