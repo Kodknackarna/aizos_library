@@ -9,7 +9,7 @@ public class Book {
     private String isbn;
 
     public Book(String title, String author, int year, String isbn) {
-        if (title == "" || author == "" || isbn == "" || year < -10000 || year > Year.now().getValue()) {
+        if (title.isEmpty() || author.isEmpty() || isbn.isEmpty() || year < -10000 || year > Year.now().getValue()) {
             throw new IllegalArgumentException("Title, author, and ISBN cannot be empty");
         } else {
             this.title = title;

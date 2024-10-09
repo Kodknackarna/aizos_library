@@ -11,8 +11,6 @@ public class Library {
     public Library() {}
 
     public void addBook(Book book) {
-
-        //add book to the list of books
         books.add(book);
     }
 

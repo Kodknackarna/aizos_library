@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
 
-
     @Test
     void addBookTest(){
         //given
@@ -20,7 +19,6 @@ class LibraryTest {
         //then
         assertEquals("Harry Potter", library.getBook("3545").getTitle());
 
-        // Här testar vi att undantagen kastas
         assertThrows(IllegalArgumentException.class, () -> {
             library.addBook(new Book("", "", 1922, "3345"));
         });
@@ -31,6 +29,22 @@ class LibraryTest {
 
         assertThrows(IllegalArgumentException.class, () -> {
             library.addBook(new Book("Sagan om Ringen", "Tolkien", 2025, "3345"));
+        });
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "'', '', 1922, '3345'",
+            "'Sagan om Ringen', 'Tolkien', 1992, ''",
+            "'Sagan om Ringen', 'Tolkien', 2025, '3345'"
+    })
+    void addBookTestThrows(String title, String author, int year, String isbn) {
+        // given
+        Library library = new Library();
+
+        // when & then
+        assertThrows(IllegalArgumentException.class, () -> {
+            library.addBook(new Book(title, author, year, isbn));
         });
     }
 
