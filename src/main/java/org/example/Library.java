@@ -18,6 +18,16 @@ public class Library {
 
     public void removeBook(String isbn) {
         //remove book with isbn
+        books.remove(getBook(isbn));
+    }
+
+    public boolean doesBookExist(String isbn) {
+        for (Book book : books) {
+            if(book.getIsbn().equals(isbn)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void updateBook(String isbn, Book updatedBook) {

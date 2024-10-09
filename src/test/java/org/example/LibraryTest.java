@@ -36,12 +36,25 @@ class LibraryTest {
     void removeBookTest(){
         //given
         Library library = new Library();
-
+        library.addBook(new Book("Harry Potter", "JK Rowling", 1994, "3345"));
         //when
         library.removeBook("3345");
 
         //then
         assertNull(library.getBook("3345"));
+
+    }
+
+    @Test
+    void removeBookTestTrue(){
+        //given
+        Library library = new Library();
+        library.addBook(new Book("Harry Potter", "JK Rowling", 1994, "3345"));
+        //when
+        library.removeBook("3345");
+
+        //then
+        assertTrue(library.doesBookExist("3345"));
 
     }
 
