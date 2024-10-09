@@ -49,7 +49,8 @@ public class Library {
         return null;
     }
 
-    public void listBooks() {
+    public List<Book> listBooks() {
         //Show all books
+        return null;
     }
 }
