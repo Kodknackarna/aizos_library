@@ -24,14 +24,6 @@ public class Library {
         //update a book
     }
 
-//    public Book getBook(String isbn) {
-//        for (Book book : books) {
-//            if (book.getIsbn().equals(isbn)) {
-//                return book;
-//            }
-//        }
-//        return null;
-//    }
 
     public Book getBook(String isbn) {
         for (Book book : books) {
