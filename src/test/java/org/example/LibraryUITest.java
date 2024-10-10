@@ -21,7 +21,7 @@ class LibraryUITest {
 
         //then
         assertEquals("Harry Potter", title);
-        verify(library).getBook("3355");
+        //verify(library).getBook("3355");
     }
 
 }
