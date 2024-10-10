@@ -2,7 +2,9 @@ name: Unit test
 
 on:
   push:
-    branches: [ "adam" ]
+    branches: ["adam", "Youssef", "zindriana"]
+  pull_request:
+    branches: ["adam", "Youssef", "zindriana"]
 
 
 jobs:
